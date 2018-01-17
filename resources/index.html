@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Todos</title>
+        <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css" />
+    </head>
+    <body>
+        <center><h1>TODOS</h1></center>
+        <table class="table" id="list"></table>
+
+        <script>
+            var todos = ['Hello World!', 'Foo Bar', 'This is a todo'];
+
+            window.onload = function () {
+                loadTable();
+            }
+
+            // POPULATES HTML TABLE GIVEN THE CONTENTS OF THE TODOS ARRAY
+            function loadTable() {
+                var list = document.getElementById('list');
+                list.innerHTML = '';
+                for (var i = 0; i < todos.length; i++) {
+                    list.innerHTML += `<tr>
+                        <td style="width: 5%;"><button class="btn btn-danger" onclick="removeItem(${i})">X</button></td>
+                        <td style="font-size: 150%;">${todos[i]}</td>
+                    </tr>`
+                }
+            }
+
+            // REMOVES AN ITEM FROM THE TODOS ARRAY GIVEN THE INDEX, AND RELOADS THE HTML TABLE
+            function removeItem(index) {
+                todos.splice(index, 1);
+                loadTable();
+            }
+        </script>
+    </body>
+</html>
