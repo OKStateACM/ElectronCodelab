@@ -149,3 +149,7 @@ const menuTemplate = [
     }
 ];
 ```
+
+<br/>
+
+<center><h6><a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/04%20-%20Interprocess%20Communication.md">« 4. Interprocess Communication</a> | <a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/06%20-%20Where%20To%20Go%20From%20Here.md">6. Where To Go From Here »</a></h6></center>

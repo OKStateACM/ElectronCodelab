@@ -273,3 +273,7 @@ const menuTemplate = [
     </body>
 </html>
 ```
+
+<br/>
+
+<center><h6><a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/03%20-%20Menus%20and%20Multi-Window%20Functionality.md">« 3. Menus and Multi-Window Functionality</a> | <a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/05%20-%20Tray%20Applets.md">5. Tray Applets »</a></h6></center>
