@@ -100,6 +100,48 @@ Run your app again and open the *Add Todo* window. Notice that the window's dime
 
 This highlights only three possible properties that can be defined in `options`. [A complete list can be found here](https://github.com/electron/electron/blob/master/docs/api/browser-window.md#new-browserwindowoptions).
 
+***
+
+### Current State of the Code:
+
+##### `index.js`
+
+```js
+const electron = require('electron');
+const app = electron.app;
+const BrowserWindow = electron.BrowserWindow;
+const Menu = electron.Menu;
+
+app.on('ready', () => {
+    let mainWindow = new BrowserWindow({});
+    mainWindow.loadURL(`file://${__dirname}/index.html`);
+
+    const mainMenu = Menu.buildFromTemplate(menuTemplate);
+    Menu.setApplicationMenu(mainMenu);
+});
+
+function createAddWindow() {
+    let addWindow = new BrowserWindow({
+        width: 400,
+        height: 225,
+        resizable: false
+    });
+    addWindow.loadURL(`file://${__dirname}/add.html`);
+    addWindow.setMenu(null);
+    addWindow.on('closed', () => addWindow = null);
+}
+
+const menuTemplate = [
+    {
+        label: 'File',
+        submenu: [{
+            label: 'Add Todo',
+            click() {createAddWindow();}
+        }]
+    }
+];
+```
+
 <br/>
 
 <center><h6><a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/02%20-%20Creating%20an%20Electron%20App.md">« 2. Creating an Electron App</a> | <a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/04%20-%20Interprocess%20Communication.md">4. Interprocess Communication »</a></h6></center>

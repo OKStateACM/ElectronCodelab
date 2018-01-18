@@ -10,7 +10,13 @@
         <table class="table" id="list"></table>
 
         <script>
+            const electron = require('electron');
+            const ipcRenderer = electron.ipcRenderer;
             var todos = [];
+
+            ipcRenderer.on('CREATE_TODO2', (event, name) => {
+                addItem(name);
+            });
 
             window.onload = function () {
                 addItem('Hello World!');

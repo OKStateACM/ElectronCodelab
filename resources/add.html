@@ -11,8 +11,14 @@
             <h1>ADD TODO</h1>
             <form>
                 <input class="form-control" id="todoName" style="background-color: #171717; width: 90%; color: white;" placeholder="Enter name of todo">
-                <input type="submit" class="btn btn-secondary" onclick="submit()" style="margin: 10px;"/>
+                <input type="submit" class="btn btn-secondary" style="margin: 10px;"/>
             </form>
         </center>
+
+        <script>
+            document.querySelector('form').addEventListener('submit', () => {
+                event.preventDefault();
+            });
+        </script>
     </body>
 </html>

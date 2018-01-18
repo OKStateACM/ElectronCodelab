@@ -11,8 +11,18 @@
             <h1>ADD TODO</h1>
             <form>
                 <input class="form-control" id="todoName" style="background-color: #171717; width: 90%; color: white;" placeholder="Enter name of todo">
-                <input type="submit" class="btn btn-secondary" onclick="submit()" style="margin: 10px;"/>
+                <input type="submit" class="btn btn-secondary" style="margin: 10px;"/>
             </form>
         </center>
+
+        <script>
+            const electron = require('electron');
+            const ipcRenderer = electron.ipcRenderer;
+
+            document.querySelector('form').addEventListener('submit', () => {
+                event.preventDefault();
+                ipcRenderer.send('CREATE_TODO1', document.getElementById('todoName').value);
+            });
+        </script>
     </body>
 </html>
