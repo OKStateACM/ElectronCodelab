@@ -31,7 +31,6 @@ You'll get the whole repository, but we just need `resources/index.html` and `re
 Open `index.html` and `add.html` in your browser to see what's already been made.
 
 ![index.html](https://i.imgur.com/Bjou1D9.png)
-<center><small><i>index.html</i></small></center>
 
 <br/>
 
@@ -40,7 +39,6 @@ Open `index.html` and `add.html` in your browser to see what's already been made
 If you look at the HTML code, you'll see that the page has an HTML `table` element, as well as some premade scripts. The todos are to be stored as strings in a `todos` array. These strings can be added to `todos` via the `addItem()` function. The `loadTable()` function populates the HTML table with the elements of the `todos` array, and gives each element a button that, when clicked, calls `removeItem()` with the index of that element in the array. `removeItem()` removes that element from `todos`, and then calls `loadTable()` so the HTML reflects the changes.
 
 ![add.html](https://i.imgur.com/fHOhTOL.png)
-<center><small><i>add.html</i></small></center>
 
 <br/>
 

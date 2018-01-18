@@ -8,7 +8,7 @@ At this point, we should have a workspace folder that contains the `index.html` 
 npm init
 ```
 
-Just hit Enter for each of the prompts.
+Just hit <kbd>Enter</kbd> for each of the prompts.
 
 This initializes our workspace as a Node.js package. This does two things: (1) It allows us to install packages through npm, and (2) it creates the `package.json` file, which handles our package's metadata and its dependencies. This `package.json` will look something like
 
@@ -135,7 +135,7 @@ JavaScript on the whole is a very event-driven language, meaning code is often e
 let mainWindow = new BrowserWindow({});
 ```
 
-This line initializes a new Chromium window (represented with the `BroswerWindow` class) that we call `mainWindow`.
+This line initializes a new Chromium window (represented with the `BrowserWindow` class) that we call `mainWindow`.
 
 ### Loading HTML Documents
 
@@ -151,3 +151,7 @@ app.on('ready', () => {
 Run your Electron app again. This time, the window should display `index.html`:
 
 ![Electron app window with the contents of index.html](https://i.imgur.com/3UxqEcj.png)
+
+<br/>
+
+<center><h6><a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/01%20-%20Getting%20Started.md">« 1. Getting Started</a> | <a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/03%20-%20Menus%20and%20Multi-Window%20Functionality.md">3. Menus and Multi-Window Functionality »</a></h6></center>
