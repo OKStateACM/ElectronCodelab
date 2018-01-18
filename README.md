@@ -2,9 +2,9 @@
 
 ## January 24, 2018
 
-[Electron](https://electronjs.org/) is a JavaScript framework designed to allow developers to write cross-platform desktop applications using familiar web development technologies. Electron applications run in Chromium browser windows, enabling the use of HTML and CSS.
+[Electron](https://electronjs.org/) is a JavaScript framework designed to allow developers to write cross-platform desktop applications using familiar web development technologies. Electron applications run in Chromium browser windows, enabling the use of HTML and CSS. Originally called Atom Shell, Electron was developed by GitHub for their Atom text editor.
 
-In this codelab, we'll build a functioning todo application. Users will be able to create and delete applications as they wish. Our app will live as an applet in the taskbar tray.
+In this codelab, we'll build a functioning todo application. Users will be able to create and delete applications as they wish. Our app will live as an applet in the taskbar tray. Programming experience is expected. Experience with web development technologies such as HTML and CSS is helpful, but not required, as much of that is taken care for you already.
 
 ![Screenshot of completed todo app](https://i.imgur.com/35qgmdP.png)
 
