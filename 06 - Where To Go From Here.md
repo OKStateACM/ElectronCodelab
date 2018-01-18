@@ -24,7 +24,9 @@ How could you improve this app? Some possible ideas include...
 
 * Due date functionality
 
-Feel free to come up with your own ideas! [Join the ACM off-topic chat](https://groupme.com/join_group/35797643/H8E0Ef) and let us know what you make this week!
+* [Creating an installer so users don't need to go through the command line to run your program](https://github.com/electron/windows-installer)
+
+Feel free to come up with your own ideas, or create your own Electron apps! [Join the ACM off-topic chat](https://groupme.com/join_group/35797643/H8E0Ef) and let us know what you make this week!
 
 <br/>
 
