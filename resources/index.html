@@ -10,10 +10,12 @@
         <table class="table" id="list"></table>
 
         <script>
-            var todos = ['Hello World!', 'Foo Bar', 'This is a todo'];
+            var todos = [];
 
             window.onload = function () {
-                loadTable();
+                addItem('Hello World!');
+                addItem('Foo Bar');
+                addItem('This is a todo');
             }
 
             // POPULATES HTML TABLE GIVEN THE CONTENTS OF THE TODOS ARRAY
@@ -26,6 +28,12 @@
                         <td style="font-size: 150%;">${todos[i]}</td>
                     </tr>`
                 }
+            }
+
+            // ADDS AN ITEM TO THE TODOS ARRAY, AND RELOADS THE HTML TABLE
+            function addItem(name) {
+                todos.push(name);
+                loadTable();
             }
 
             // REMOVES AN ITEM FROM THE TODOS ARRAY GIVEN THE INDEX, AND RELOADS THE HTML TABLE

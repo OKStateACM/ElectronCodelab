@@ -6,7 +6,13 @@ Electron is a JavaScript framework that uses the Node runtime environment. We'll
 
 #### *Install Node and npm by going to [nodejs.org/en/download](https://nodejs.org/en/download/)*
 
-When you have finished installing Node, test that it works by going to your command line and entering the command `node -v` -- if you get a version number in response, you're good to go!
+When you have finished installing Node, test that it works by going to your command line and entering the command
+
+```bash
+node -v
+```
+
+If you get a version number in response, you're good to go!
 
 ### Getting the Necessary HTML Files
 
@@ -24,18 +30,24 @@ You'll get the whole repository, but we just need `resources/index.html` and `re
 
 Open `index.html` and `add.html` in your browser to see what's already been made.
 
-<figure>
-    <img src="https://i.imgur.com/Bjou1D9.png" alt="index.html">
-    <figcaption>index.html</figcaption>
-</figure>
+![index.html](https://i.imgur.com/Bjou1D9.png)
+<center><small><i>index.html</i></small></center>
+
+<br/>
 
 `index.html` serves as the main page for our todo application. Currently, it displays three hardcoded todos, as well as red buttons that, when clicked, will remove the todo from the list.
 
-If you look at the HTML code, you'll see that the page has an HTML `table` element, as well as some premade scripts. The todos are stored a strings in a `todos` array. The `loadTable()` function populates the HTML table with the elements of the `todos` array, and gives each element a button that, when clicked, calls `removeItem()` with the index of that element in the array. `removeItem()` removes that element from `todos`, and then calls `loadTable()` so the HTML reflects the changes.
+If you look at the HTML code, you'll see that the page has an HTML `table` element, as well as some premade scripts. The todos are to be stored as strings in a `todos` array. These strings can be added to `todos` via the `addItem()` function. The `loadTable()` function populates the HTML table with the elements of the `todos` array, and gives each element a button that, when clicked, calls `removeItem()` with the index of that element in the array. `removeItem()` removes that element from `todos`, and then calls `loadTable()` so the HTML reflects the changes.
 
-<figure>
-    <img src="https://i.imgur.com/fHOhTOL.png" alt="add.html">
-    <figcaption>add.html</figcaption>
-</figure>
+![add.html](https://i.imgur.com/fHOhTOL.png)
+<center><small><i>add.html</i></small></center>
+
+<br/>
 
 `add.html` is a basic HTML form. It contains an `input` element with the ID `todoName`, and a *Submit* button that, when clicked, calls an as of yet unwritten function called `submit()`.
+
+Note that, although we're focusing on what makes Electron tick in this codelab and abstracting away the webdev stuff, the vast majority of Electron development will be using the webdev technologies to produce the desired functionality.
+
+<br/>
+
+<center><h6><a href="https://github.com/OKStateACM/ElectronCodelab/blob/master/02%20-%20Creating%20an%20Electron%20App.md">2. Creating an Electron App »</a></h6></center>
