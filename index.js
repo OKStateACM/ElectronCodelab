@@ -3,16 +3,28 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const Menu = electron.Menu;
 const ipcMain = electron.ipcMain;
+const Tray = electron.Tray;
 
 let mainWindow;
 let addWindow;
 
 app.on('ready', () => {
-    mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({
+        show: false,
+        resizable: false,
+        skipTaskbar: true
+    });
     mainWindow.loadURL(`file://${__dirname}/index.html`);
 
-    const mainMenu = Menu.buildFromTemplate(menuTemplate);
-    Menu.setApplicationMenu(mainMenu);
+    let tray = new Tray('check.png');
+    tray.setToolTip('Todos');
+    tray.on('click', () => {
+        mainWindow.show();
+    });
+
+    const contextMenu = Menu.buildFromTemplate(menuTemplate);
+    tray.setContextMenu(contextMenu);
+    Menu.setApplicationMenu(null);
 });
 
 ipcMain.on('CREATE_TODO1', (event, name) => {
@@ -33,10 +45,11 @@ function createAddWindow() {
 
 const menuTemplate = [
     {
-        label: 'File',
-        submenu: [{
-            label: 'Add Todo',
-            click() {createAddWindow();}
-        }]
+        label: 'Add Todo',
+        click() {createAddWindow();}
+    },
+    {
+        label: 'Quit',
+        click() {app.quit();}
     }
 ];
