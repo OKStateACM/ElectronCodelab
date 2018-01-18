@@ -71,8 +71,11 @@ const electron = require('electron');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
+let mainWindow;
+let addWindow;
+
 app.on('ready', () => {
-    let mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({});
 });
 ```
 
@@ -122,6 +125,15 @@ If you're not familiar with this syntax, don't worry about it.
 <br/>
 
 ```js
+let mainWindow;
+let addWindow;
+```
+
+Here we declare (without initalizing) the two windows we'll be using this project. We've put them here so we have global scope.
+
+<br/>
+
+```js
 app.on('ready', () => {
     // ...
 });
@@ -143,7 +155,7 @@ A blank application is pretty useless. Let's get `mainWindow` to load our `index
 
 ```js
 app.on('ready', () => {
-    let mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({});
     mainWindow.loadURL(`file://${__dirname}/index.html`);
 });
 ```

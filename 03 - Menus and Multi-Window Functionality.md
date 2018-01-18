@@ -18,7 +18,7 @@ app.on('ready', () => {
 });
 
 function createAddWindow() {
-    let addWindow = new BrowserWindow({});
+    addWindow = new BrowserWindow({});
     addWindow.loadURL(`file://${__dirname}/add.html`);
     addWindow.setMenu(null);
     addWindow.on('closed', () => addWindow = null);
@@ -79,14 +79,14 @@ The *Add Todo* window is created with a lot of default properties like width and
 Notice the line
 
 ```js
-let addWindow = new BrowserWindow({});
+addWindow = new BrowserWindow({});
 ```
 
 We're currently passing in a blank object as a parameter to the `BrowserWindow` constructor. This object is the `options` object, and it's used to define window properties. Let's change this object to:
 
 ```js
 function createAddWindow() {
-    let addWindow = new BrowserWindow({
+    addWindow = new BrowserWindow({
         width: 400,
         height: 225,
         resizable: false
@@ -112,8 +112,11 @@ const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 const Menu = electron.Menu;
 
+let mainWindow;
+let addWindow;
+
 app.on('ready', () => {
-    let mainWindow = new BrowserWindow({});
+    mainWindow = new BrowserWindow({});
     mainWindow.loadURL(`file://${__dirname}/index.html`);
 
     const mainMenu = Menu.buildFromTemplate(menuTemplate);
@@ -121,7 +124,7 @@ app.on('ready', () => {
 });
 
 function createAddWindow() {
-    let addWindow = new BrowserWindow({
+    addWindow = new BrowserWindow({
         width: 400,
         height: 225,
         resizable: false
