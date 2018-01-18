@@ -42,7 +42,7 @@ If you look at the HTML code, you'll see that the page has an HTML `table` eleme
 
 <br/>
 
-`add.html` is a basic HTML form. It contains an `input` element with the ID `todoName`, and a *Submit* button that, when clicked, calls an as of yet unwritten function called `submit()`.
+`add.html` is a basic HTML form. It contains an `input` element with the ID `todoName`, and a *Submit* button. Currently, the form submission's default action of refreshing is prevented.
 
 Note that, although we're focusing on what makes Electron tick in this codelab and abstracting away the webdev stuff, the vast majority of Electron development will be using the webdev technologies to produce the desired functionality.
 

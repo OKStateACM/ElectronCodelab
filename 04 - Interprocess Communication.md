@@ -40,9 +40,9 @@ ipcRenderer.on(eventName, (event, /* additional parameters */) => {});
 
 ### IPC (but for real)
 
-Let's start with step 1 of the above IPC timeline: the renderer process (here, the *Add Todo* window) issues an event to the main process. Remember that the *Submit* button calls an as of yet unimplemented `submit()` function.
-
 #### 1. Renderer Issues Event
+
+Let's start with step 1 of the above IPC timeline: the renderer process (here, the *Add Todo* window) issues an event to the main process.
 
 ##### `add.html`
 
@@ -54,9 +54,10 @@ Let's start with step 1 of the above IPC timeline: the renderer process (here, t
         const electron = require('electron');
         const ipcRenderer = electron.ipcRenderer;
 
-        function submit() {
-            ipcRenderer.send('CREATE_TODO1', document.getElementById('todoName').value);
-        }
+        document.querySelector('form').addEventListener('submit', () => {
+                event.preventDefault();
+                ipcRenderer.send('CREATE_TODO1', document.getElementById('todoName').value);
+            });
     </script>
 </body>
 ```
